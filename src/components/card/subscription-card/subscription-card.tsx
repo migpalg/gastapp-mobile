@@ -25,6 +25,18 @@ const SubscriptionCard: FunctionComponent<SubscriptionCardProps> = props => (
         $24,000 <Text style={styles.cardSubtitleAppend}>/mes</Text>
       </Text>
     </View>
+    <View style={styles.dateContainer}>
+      <Text style={[styles.cardSubtitle, styles.dateContainerText]}>Since</Text>
+      <Text
+        style={[
+          styles.cardTitle,
+          styles.dateContainerText,
+          styles.dateContainerNumber,
+        ]}>
+        28
+      </Text>
+      <Text style={[styles.cardSubtitle, styles.dateContainerText]}>Sep</Text>
+    </View>
   </Card>
 );
 

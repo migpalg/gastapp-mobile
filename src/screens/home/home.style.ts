@@ -11,6 +11,8 @@ export default StyleSheet.create({
     paddingTop: 20 + (StatusBar.currentHeight || 0),
     position: 'relative',
     zIndex: 2,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
   },
   heroBgWrapper: {
     position: 'absolute',
@@ -18,10 +20,10 @@ export default StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: globalStyles.colors.primary(1),
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
     overflow: 'hidden',
+    backgroundColor: globalStyles.colors.black(1),
   },
   heroText: {
     ...globalStyles.fonts.h1,
@@ -62,8 +64,8 @@ export default StyleSheet.create({
     height: 40,
   },
   subscriptionCard: {
+    marginHorizontal: 30,
     marginBottom: 20,
-    marginHorizontal: 20,
   },
   text: {
     ...globalStyles.fonts.p,

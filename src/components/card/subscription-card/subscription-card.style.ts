@@ -4,14 +4,15 @@ import globalStyles from '../../../styles';
 export default StyleSheet.create({
   card: {
     flexDirection: 'row',
+    borderRadius: 10,
   },
   cardImageContainer: {
     height: 70,
     width: 70,
     overflow: 'hidden',
-    borderRadius: 10,
-    elevation: 5,
-    backgroundColor: globalStyles.colors.black(0.2),
+    borderRadius: 5,
+    borderColor: '#DDD',
+    borderWidth: 1,
   },
   cardImage: {
     height: '100%',
@@ -32,5 +33,20 @@ export default StyleSheet.create({
   cardSubtitleAppend: {
     fontSize: 10,
     color: globalStyles.colors.black(0.4),
+  },
+  dateContainer: {
+    borderWidth: 1,
+    borderColor: '#DDD',
+    borderRadius: 10,
+    padding: 10,
+    justifyContent: 'center',
+    alignContent: 'center',
+  },
+  dateContainerText: {
+    textAlign: 'center',
+    fontSize: 10,
+  },
+  dateContainerNumber: {
+    fontSize: 20,
   },
 });

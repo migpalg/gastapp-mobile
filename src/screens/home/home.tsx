@@ -4,6 +4,8 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import styles from './home.style';
 import {Input} from '../../components';
 import {SubscriptionCard} from '../../components/card';
+import LinearGradient from 'react-native-linear-gradient';
+import colors from '../../styles/colors';
 
 const Home: FunctionComponent = () => (
   <View style={styles.container}>
@@ -13,10 +15,14 @@ const Home: FunctionComponent = () => (
       barStyle="light-content"
     />
     <View style={styles.hero}>
-      <View style={styles.heroBgWrapper}>
+      <LinearGradient
+        colors={[colors.primary(1), colors.primary(0.7)]}
+        start={{x: 0, y: 0}}
+        end={{x: 1, y: 1}}
+        style={styles.heroBgWrapper}>
         <View style={styles.heroFloatCircle} />
         <View style={styles.heroFloatRect} />
-      </View>
+      </LinearGradient>
       <View style={styles.heroHeader}>
         <Icon name="menu" size={20} color="#FFF" />
         <Text style={styles.heroText}>Balance Actual</Text>
