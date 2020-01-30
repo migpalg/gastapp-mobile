@@ -26,7 +26,7 @@ import {Subscription} from 'src/providers/subscriptions';
 export interface SubscriptionCardProps {
   style?: StyleProp<ViewStyle>;
   onOpen?: () => void;
-  subscription: Subscription;
+  subscription?: Subscription;
 }
 
 const SubscriptionCard: FunctionComponent<SubscriptionCardProps> = props => {
