@@ -14,9 +14,9 @@ export default StyleSheet.create({
     padding: 10,
     backgroundColor: '#FFF',
     borderRadius: 10,
+    elevation: 11,
   },
   optionContainer: {
-    backgroundColor: globalStyles.colors.primary(1),
     position: 'absolute',
     alignItems: 'flex-end',
     justifyContent: 'center',

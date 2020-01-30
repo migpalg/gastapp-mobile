@@ -18,6 +18,7 @@ import {
   TouchableOpacity,
 } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import LinearGradient from 'react-native-linear-gradient';
 
 export interface SubscriptionCardProps {
   style?: StyleProp<ViewStyle>;
@@ -29,6 +30,7 @@ const SubscriptionCard: FunctionComponent<SubscriptionCardProps> = props => {
 
   const [xOffsetAnim] = useState(new Animated.Value(0));
   const [isOpen, setIsOpen] = useState(false);
+  const [lastOffsetX, setLastOffsetX] = useState(0);
 
   /**
    * Handle when the user Swipes on X
@@ -36,9 +38,9 @@ const SubscriptionCard: FunctionComponent<SubscriptionCardProps> = props => {
    */
   const handleCardSwipe = (event: PanGestureHandlerGestureEvent) => {
     const {translationX} = event.nativeEvent;
-    const eventOffsetX = translationX;
+    const eventOffsetX = translationX + lastOffsetX;
 
-    if (translationX < 0) {
+    if (translationX + lastOffsetX < 0) {
       xOffsetAnim.setValue(eventOffsetX);
     }
 
@@ -51,13 +53,15 @@ const SubscriptionCard: FunctionComponent<SubscriptionCardProps> = props => {
    */
   const handleCardTap = (event: PanGestureHandlerStateChangeEvent) => {
     if (event.nativeEvent.state === State.END) {
+      const finalValue = isOpen ? -OPEN_WIDTH : 0;
+
       Animated.timing(xOffsetAnim, {
-        toValue: isOpen ? -OPEN_WIDTH : 0,
+        toValue: finalValue,
         duration: 400,
         easing: Easing.bounce,
-      }).start();
+      }).start(() => setLastOffsetX(finalValue));
 
-      if (props.onOpen) {
+      if (isOpen && props.onOpen) {
         props.onOpen();
       }
     }
@@ -65,13 +69,17 @@ const SubscriptionCard: FunctionComponent<SubscriptionCardProps> = props => {
 
   return (
     <Card style={[styles.card, props.style]}>
-      <View style={styles.optionContainer}>
+      <LinearGradient
+        start={{x: 0.95, y: 0}}
+        end={{x: 0.7, y: 0}}
+        colors={['#000', '#444']}
+        style={styles.optionContainer}>
         <TouchableOpacity
           activeOpacity={0.6}
           style={styles.optionContainerContent}>
           <Icon name="remove-red-eye" size={25} color="#FFF" />
         </TouchableOpacity>
-      </View>
+      </LinearGradient>
       <PanGestureHandler
         minOffsetY={1000}
         minDeltaX={10}
