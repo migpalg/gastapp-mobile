@@ -21,6 +21,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export interface SubscriptionCardProps {
   style?: StyleProp<ViewStyle>;
+  onOpen?: () => void;
 }
 
 const SubscriptionCard: FunctionComponent<SubscriptionCardProps> = props => {
@@ -29,6 +30,10 @@ const SubscriptionCard: FunctionComponent<SubscriptionCardProps> = props => {
   const [xOffsetAnim] = useState(new Animated.Value(0));
   const [isOpen, setIsOpen] = useState(false);
 
+  /**
+   * Handle when the user Swipes on X
+   * @param event react-native-gesture-handler PanGesture event
+   */
   const handleCardSwipe = (event: PanGestureHandlerGestureEvent) => {
     const {translationX} = event.nativeEvent;
     const eventOffsetX = translationX;
@@ -40,6 +45,10 @@ const SubscriptionCard: FunctionComponent<SubscriptionCardProps> = props => {
     setIsOpen(eventOffsetX <= -OPEN_WIDTH);
   };
 
+  /**
+   * Handle when the the user taps the card
+   * @param event react-native-gesture-handler event
+   */
   const handleCardTap = (event: PanGestureHandlerStateChangeEvent) => {
     if (event.nativeEvent.state === State.END) {
       Animated.timing(xOffsetAnim, {
@@ -47,6 +56,10 @@ const SubscriptionCard: FunctionComponent<SubscriptionCardProps> = props => {
         duration: 400,
         easing: Easing.bounce,
       }).start();
+
+      if (props.onOpen) {
+        props.onOpen();
+      }
     }
   };
 

@@ -21,7 +21,7 @@ const Input: FunctionComponent<InputProps> = props => (
     {props.prependIcon && (
       <Icon size={20} style={styles.prependButton} name={props.prependIcon} />
     )}
-    <TextInput {...props} style={styles.inputText} />
+    <TextInput {...props} style={[styles.inputText, props.textInputStyle]} />
   </View>
 );
 

@@ -32,6 +32,7 @@ const Home: FunctionComponent = () => (
       <Input
         placeholder="Tu búsqueda"
         prependIcon="search"
+        textInputStyle={styles.searchBarInput}
         style={styles.searchBar}
       />
     </View>

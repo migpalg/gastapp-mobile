@@ -57,6 +57,10 @@ export default StyleSheet.create({
     position: 'absolute',
     bottom: -18,
   },
+  searchBarInput: {
+    ...globalStyles.fonts.p,
+    fontSize: 16,
+  },
   contentContainer: {
     flex: 1,
   },
