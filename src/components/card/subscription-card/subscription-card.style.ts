@@ -3,8 +3,30 @@ import globalStyles from '../../../styles';
 
 export default StyleSheet.create({
   card: {
-    flexDirection: 'row',
     borderRadius: 10,
+    alignItems: 'center',
+    padding: 0,
+    overflow: 'hidden',
+    backgroundColor: '#F2F2F2',
+  },
+  cardContent: {
+    flexDirection: 'row',
+    padding: 10,
+    backgroundColor: '#FFF',
+    borderRadius: 10,
+  },
+  optionContainer: {
+    backgroundColor: globalStyles.colors.primary(1),
+    position: 'absolute',
+    alignItems: 'flex-end',
+    justifyContent: 'center',
+    ...StyleSheet.absoluteFillObject,
+  },
+  optionContainerContent: {
+    width: 80,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%',
   },
   cardImageContainer: {
     height: 70,
@@ -21,6 +43,7 @@ export default StyleSheet.create({
   cardTextContainer: {
     flex: 1,
     paddingHorizontal: 10,
+    alignSelf: 'flex-start',
   },
   cardTitle: {
     ...globalStyles.fonts.h1,
@@ -38,7 +61,8 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderColor: '#DDD',
     borderRadius: 10,
-    padding: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
     justifyContent: 'center',
     alignContent: 'center',
   },
