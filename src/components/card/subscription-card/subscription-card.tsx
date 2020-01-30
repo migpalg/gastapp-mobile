@@ -20,9 +20,13 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import LinearGradient from 'react-native-linear-gradient';
 
+// Providers
+import {Subscription} from 'src/providers/subscriptions';
+
 export interface SubscriptionCardProps {
   style?: StyleProp<ViewStyle>;
   onOpen?: () => void;
+  subscription: Subscription;
 }
 
 const SubscriptionCard: FunctionComponent<SubscriptionCardProps> = props => {
