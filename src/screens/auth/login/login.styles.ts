@@ -3,10 +3,13 @@ import globalStyles from '../../../styles';
 
 export default StyleSheet.create({
   wrapper: {
-    backgroundColor: '#F9F9F9',
+    flex: 1,
+  },
+  container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#000',
   },
   formContainer: {
     width: '80%',
@@ -14,22 +17,27 @@ export default StyleSheet.create({
   headerTitle: {
     ...globalStyles.fonts.h1,
     textAlign: 'center',
-    fontSize: 25,
-    marginBottom: 20,
+    fontSize: 45,
+    marginBottom: 60,
+    color: '#FFF',
   },
   loginInput: {
     borderWidth: 1,
-    borderColor: '#CCC',
-    backgroundColor: 'transparent',
-    padding: 0,
+    borderColor: '#FFF',
   },
   loginInputText: {
-    ...globalStyles.fonts.p,
-    fontSize: 16,
-    padding: 0,
-    margin: 0,
+    color: '#FFF',
   },
-  passwordInput: {
+  withMargin: {
     marginTop: 20,
+  },
+  loginButton: {
+    backgroundColor: globalStyles.colors.primary(1),
+  },
+  registerLinkText: {
+    ...globalStyles.fonts.primary,
+    marginTop: 40,
+    fontSize: 12,
+    color: '#FFF',
   },
 });
