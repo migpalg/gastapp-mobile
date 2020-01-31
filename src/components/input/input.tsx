@@ -15,17 +15,23 @@ export interface InputProps extends TextInputProps {
   style?: StyleProp<ViewStyle>;
   textInputStyle?: StyleProp<TextStyle>;
   outline?: boolean;
+  iconColor?: string;
 }
 
 const Input: FunctionComponent<InputProps> = props => (
   <View
     style={[
       styles.inputContainer,
-      props.style,
       {...(props.outline && styles.outlineInput)},
+      props.style,
     ]}>
     {props.prependIcon && (
-      <Icon size={20} style={styles.prependButton} name={props.prependIcon} />
+      <Icon
+        size={20}
+        style={styles.prependButton}
+        color={props.iconColor}
+        name={props.prependIcon}
+      />
     )}
     <TextInput {...props} style={[styles.inputText, props.textInputStyle]} />
   </View>

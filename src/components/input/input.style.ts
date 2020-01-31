@@ -19,7 +19,6 @@ export default StyleSheet.create({
   },
   prependButton: {
     marginLeft: 10,
-    color: '#AAA',
   },
   outlineInput: {
     backgroundColor: 'transparent',
