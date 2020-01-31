@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react';
-import {Home} from '../../screens';
+import {Auth} from '../../screens';
 
-const App: FunctionComponent = () => <Home />;
+const App: FunctionComponent = () => <Auth.Login />;
 
 export default App;

@@ -58,7 +58,6 @@ export default StyleSheet.create({
     bottom: -18,
   },
   searchBarInput: {
-    ...globalStyles.fonts.p,
     fontSize: 16,
   },
   contentContainer: {
