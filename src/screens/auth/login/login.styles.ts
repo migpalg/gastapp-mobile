@@ -20,6 +20,12 @@ export default StyleSheet.create({
     fontSize: 45,
     marginBottom: 60,
     color: '#FFF',
+    textShadowColor: globalStyles.colors.black(0.5),
+    textShadowOffset: {
+      width: 3,
+      height: 3,
+    },
+    textShadowRadius: 1,
   },
   loginInput: {
     borderWidth: 1,
@@ -32,12 +38,32 @@ export default StyleSheet.create({
     marginTop: 20,
   },
   loginButton: {
-    backgroundColor: globalStyles.colors.primary(1),
+    elevation: 0,
   },
   registerLinkText: {
     ...globalStyles.fonts.primary,
     marginTop: 40,
     fontSize: 12,
     color: '#FFF',
+  },
+  decoration: {
+    position: 'absolute',
+  },
+  decorationBottomRight: {
+    borderColor: globalStyles.colors.black(0.15),
+    borderWidth: 30,
+    right: -50,
+    bottom: -100,
+    height: 250,
+    width: 250,
+    borderRadius: 250 / 2,
+  },
+  decorationTopLeft: {
+    top: -130,
+    left: -80,
+    height: 280,
+    width: 280,
+    borderRadius: 30,
+    backgroundColor: globalStyles.colors.black(0.15),
   },
 });
