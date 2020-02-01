@@ -13,7 +13,7 @@ const colorWithOpacity = (red: number, green: number, blue: number) => (
 ) => parseToString({red, green, blue, alpha});
 
 export default {
-  primary: colorWithOpacity(0, 64, 217),
+  primary: colorWithOpacity(20, 224, 112),
   white: colorWithOpacity(255, 255, 255),
   black: colorWithOpacity(0, 0, 0),
 };
