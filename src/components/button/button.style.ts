@@ -11,7 +11,7 @@ export default StyleSheet.create({
   },
   buttonText: {
     ...globalStyles.fonts.primary,
-    fontSize: 16,
+    fontSize: 14.5,
     textAlign: 'center',
   },
 });
