@@ -30,6 +30,7 @@ const Home: FunctionComponent = () => (
       </View>
       <Text style={styles.balanceText}>$500.000,32</Text>
       <Input
+        returnKeyType="search"
         placeholder="Tu búsqueda"
         prependIcon="search"
         textInputStyle={styles.searchBarInput}
