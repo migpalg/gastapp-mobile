@@ -10,7 +10,7 @@ export default StyleSheet.create({
     backgroundColor: '#FFF',
   },
   buttonText: {
-    ...globalStyles.fonts.primary,
+    ...globalStyles.fonts.h1,
     fontSize: 14.5,
     textAlign: 'center',
   },
