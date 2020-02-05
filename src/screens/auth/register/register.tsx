@@ -1,13 +1,20 @@
-import React from 'react';
+import React, {FunctionComponent} from 'react';
 import {View, Text, StatusBar, SafeAreaView} from 'react-native';
 import {Input, Button} from '../../../components';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import {NavigationStackProp} from 'react-navigation-stack';
 import styles from './register.style';
 
-const Register = () => {
+interface RegisterProps {
+  navigation: NavigationStackProp;
+}
+
+const Register: FunctionComponent<RegisterProps> = props => {
+  const handleReturnButtonPress = () => props.navigation.goBack();
+
   return (
-    <View style={styles.wrapper}>
+    <ScrollView style={styles.wrapper}>
       <StatusBar
         barStyle="dark-content"
         backgroundColor="transparent"
@@ -15,7 +22,7 @@ const Register = () => {
       />
       <SafeAreaView>
         <View style={styles.arrowBack}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={handleReturnButtonPress}>
             <Icon name="chevron-left" size={40} />
           </TouchableOpacity>
         </View>
@@ -55,7 +62,7 @@ const Register = () => {
           </Text>
         </View>
       </SafeAreaView>
-    </View>
+    </ScrollView>
   );
 };
 

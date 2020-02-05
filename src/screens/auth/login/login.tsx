@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FunctionComponent} from 'react';
 import {View, Text, StatusBar, Animated, Easing} from 'react-native';
 import {Input, Button} from '../../../components';
 import {InputProps} from '../../../components/input/input';
@@ -6,6 +6,7 @@ import styles from './login.styles';
 import LinearGradient from 'react-native-linear-gradient';
 import colors from '../../../styles/colors';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {NavigationStackProp} from 'react-navigation-stack';
 
 const LoginInput: React.FC<InputProps> = props => (
   <Input
@@ -19,7 +20,11 @@ const LoginInput: React.FC<InputProps> = props => (
   />
 );
 
-const Login = () => {
+interface LoginProps {
+  navigation: NavigationStackProp;
+}
+
+const Login: FunctionComponent<LoginProps> = props => {
   const [rotateAnim] = React.useState(new Animated.Value(0));
 
   React.useEffect(() => {
@@ -31,6 +36,8 @@ const Login = () => {
       }),
     ).start();
   });
+
+  const handleRegisterButtonPress = () => props.navigation.navigate('Register');
 
   return (
     <View style={styles.wrapper}>
@@ -74,7 +81,7 @@ const Login = () => {
           </Button>
         </View>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handleRegisterButtonPress}>
           <Text style={styles.registerLinkText}>Crear una cuenta</Text>
         </TouchableOpacity>
       </LinearGradient>

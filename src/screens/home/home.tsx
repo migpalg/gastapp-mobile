@@ -5,9 +5,14 @@ import styles from './home.style';
 import {Input} from '../../components';
 import {SubscriptionCard} from '../../components/card';
 import LinearGradient from 'react-native-linear-gradient';
+import {NavigationStackProp} from 'react-navigation-stack';
 import colors from '../../styles/colors';
 
-const Home: FunctionComponent = () => (
+interface HomeProps {
+  navigation: NavigationStackProp;
+}
+
+const Home: FunctionComponent<HomeProps> = () => (
   <View style={styles.container}>
     <StatusBar
       translucent

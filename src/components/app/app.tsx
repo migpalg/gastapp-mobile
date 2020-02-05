@@ -1,6 +1,10 @@
 import React, {FunctionComponent} from 'react';
-import {Auth} from '../../screens';
+import AppRouter from '../../router';
+import {enableScreens} from 'react-native-screens';
 
-const App: FunctionComponent = () => <Auth.Register />;
+// Activates library
+enableScreens();
+
+const App: FunctionComponent = () => <AppRouter />;
 
 export default App;
