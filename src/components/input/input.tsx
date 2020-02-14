@@ -43,4 +43,14 @@ const Input = forwardRef<InputRef, InputProps>((props, ref) => (
   </View>
 ));
 
+export const createInput = (defaultProps: InputProps) =>
+  forwardRef<InputRef, InputProps>((props, ref) => (
+    <Input
+      {...defaultProps}
+      {...props}
+      style={[defaultProps.style, props.style]}
+      ref={ref}
+    />
+  ));
+
 export default Input;
