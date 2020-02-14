@@ -20,6 +20,9 @@ export interface InputProps extends TextInputProps {
 
 export type InputRef = TextInput;
 
+/**
+ * General purpose input
+ */
 const Input = forwardRef<InputRef, InputProps>((props, ref) => (
   <View
     style={[
