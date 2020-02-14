@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {forwardRef} from 'react';
 import {
   View,
   TextInput,
@@ -18,30 +18,29 @@ export interface InputProps extends TextInputProps {
   iconColor?: string;
 }
 
-class Input extends Component<InputProps> {
-  render() {
-    return (
-      <View
-        style={[
-          styles.inputContainer,
-          {...(this.props.outline && styles.outlineInput)},
-          this.props.style,
-        ]}>
-        {this.props.prependIcon && (
-          <Icon
-            size={20}
-            style={styles.prependButton}
-            color={this.props.iconColor}
-            name={this.props.prependIcon}
-          />
-        )}
-        <TextInput
-          {...this.props}
-          style={[styles.inputText, this.props.textInputStyle]}
-        />
-      </View>
-    );
-  }
-}
+export type InputRef = TextInput;
+
+const Input = forwardRef<InputRef, InputProps>((props, ref) => (
+  <View
+    style={[
+      styles.inputContainer,
+      {...(props.outline && styles.outlineInput)},
+      props.style,
+    ]}>
+    {props.prependIcon && (
+      <Icon
+        size={20}
+        style={styles.prependButton}
+        color={props.iconColor}
+        name={props.prependIcon}
+      />
+    )}
+    <TextInput
+      ref={ref}
+      {...props}
+      style={[styles.inputText, props.textInputStyle]}
+    />
+  </View>
+));
 
 export default Input;
