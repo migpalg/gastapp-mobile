@@ -2,8 +2,9 @@ import React, {FunctionComponent} from 'react';
 import {View, Text, StatusBar, SafeAreaView} from 'react-native';
 import {Input, Button} from '../../../components';
 import {TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import {NavigationStackProp} from 'react-navigation-stack';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import styles from './register.style';
 
 interface RegisterProps {
