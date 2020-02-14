@@ -1,4 +1,16 @@
 import AuthStack from './auth';
-import {createAppContainer} from 'react-navigation';
+import AppStack from './app';
 
-export default createAppContainer(AuthStack);
+import {createAppContainer, createSwitchNavigator} from 'react-navigation';
+
+const RootNavigation = createSwitchNavigator(
+  {
+    Auth: AuthStack,
+    App: AppStack,
+  },
+  {
+    initialRouteName: 'Auth',
+  },
+);
+
+export default createAppContainer(RootNavigation);
